@@ -102,6 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 AUTH_PROFILE_MODULE = 'login_demo_app.UserProfile'
 AUTHENTICATION_BACKENDS = (
   'social.backends.facebook.FacebookOAuth2',
