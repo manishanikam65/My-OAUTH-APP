@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+	
+	{%if user.is_authenticated%}
+		<h1>Hello {{user.username}}</h1>
+		 <a href="/logout">Logout</a>
+	{%else%}
+		<h3>Select login option:</h3>
+		{% load staticfiles %}
+		<a href="{% url 'social:begin' 'facebook' %}">
+			<img src="{% static "facebook-icon.png" %}">
+		</a>
+		<br>
+		<br>
+		<br>
+		<a href="{% url 'social:begin' 'github' %}">
+			<img src="{% static "github-icon.png" %}">
+		</a>
+	{%endif%}
+{%endblock%}
